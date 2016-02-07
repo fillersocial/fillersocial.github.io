@@ -110,7 +110,31 @@ function myFunctionProfile() {
           showIt();
 
           $('#metaInfo').empty();
-          $('#metaInfo').append('sdfsdf')
+          $('#metaInfo').append(
+          '<b>' + 'Name: ' + '</b>' + result[0].name + '<br/>' +
+          '<b>' + 'Screen: ' + '</b>' + result[0].screen_name + '<br/>' +
+          '<b>' + 'Location: ' + '</b>' + result[0].location + '<br/>' +
+          '<b>' + 'Followers: ' + '</b>' + result[0].followers_count + '<br/>' +
+          '<b>' + 'Friends: ' + '</b>' + result[0].friends_count + '<br/>' +
+          '<b>' + 'Desc: ' + '</b>' + result[0].description
+          );
+
+          if(x.value.trim() == 'iisuperwomanii'){
+            toggle_visibility('facebookFeedComesHere', 'show');
+          }else{
+            toggle_visibility('facebookFeedComesHere', 'hide');
+          }
+        // $('#facebookFeedComesHere').empty();
+        //   $('#facebookFeedComesHere').append(
+
+        //     '<div class="fb-page" data-href="https://www.facebook.com/' + x.value.trim() +
+        //     '" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" ' +
+        //     'data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore">' +
+        //     '<blockquote cite="https://www.facebook.com/' + x.value.trim() + 
+        //     '"><a href="https://www.facebook.com/' + x.value.trim() + 
+        //     '">' + x.value.trim() +'</a></blockquote></div></div>'
+
+        //   );
           
         }});
 }
@@ -175,11 +199,11 @@ function myFunction() {
           for(var i=nameList.length-10; i<nameList.length; i++){
 
 
-              $('#metaInfo').append('<div style="margin-left: 15px; margin-top:15px;" class="chip">'+
-                '<img src="' + photoList[i] + '" alt="Contact Person">'+
-                nameList[i] + '</div>');
+            $('#metaInfo').append('<div style="margin-left: 15px; margin-top:15px;" class="chip">'+
+              '<img src="' + photoList[i] + '" alt="Contact Person">'+
+              nameList[i] + '</div>');
 
-            }
+          }
         }});
 }
 

@@ -13,6 +13,15 @@
   <link rel="stylesheet" href="css/speech-input.css">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=458802767646644";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
   <nav class="blue" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo" style="color: white;">Filler Social Profile</a>
@@ -49,7 +58,7 @@
         </div>
 
         <div class="input-field col s3">
-          <button id="submit_button" class="btn waves-effect waves-light" type="submit" name="action" onclick="myFunctionProfile()" style="background-color: #2196F3;">Submit
+          <button id="submit_button" class="btn waves-effect waves-light" type="submit" name="action" onclick="myFunctionProfile()" style="background-color: #2196F3;">GO
               <i class="material-icons right">send</i>
             </button>
             <a class="btn-floating btn-large waves-effect waves-light green" onclick="myFunctionProfile()">
@@ -104,8 +113,23 @@
           </div>
         </div>
         </center>
-      <ul class="collection" id="listOfPeople">
-      </ul>
+
+
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="input-field col s8" >
+            <ul class="collection" id="listOfPeople">
+            </ul>
+          </div>
+          <div class="input-field col s4" id="facebookFeedComesHere" style="display: none;">
+            
+
+<div class="fb-page" data-href="https://www.facebook.com/iisuperwomanii" data-height="1000" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/iisuperwomanii"><a href="https://www.facebook.com/iisuperwomanii">IISuperwomanII</a></blockquote></div></div>
+
+          </div>
+        </div>
+      </div>
+
 
       
 
