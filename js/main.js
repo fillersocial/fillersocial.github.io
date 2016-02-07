@@ -18,21 +18,21 @@ var toggleValue = true;
 function myFunctionMain () {
     var x = document.getElementById("first_name2");
     var y = document.getElementById("submit_button");
-    x.disabled = true
-    y.disabled = true
+    // x.disabled = true
+    // y.disabled = true
     $('#logo-container').text('#' + x.value);
     if(toggleValue == true){
       toggleValue = false;
-      $('#napsMainListen').text('Refreshing');
+      $('#napsMainListen').text('Refresh...');
     }else{
       toggleValue = true;
-      $('#napsMainListen').text('Amrit Singh Bains');
+      $('#napsMainListen').text('Refresh');
     }
     myFunction();
-    setTimeout(function(){ 
-      console.log('called')
-      myFunctionMain();
-    }, 3000); 
+    // setTimeout(function(){ 
+    //   console.log('called')
+    //   myFunctionMain();
+    // }, 3000); 
 }
 
 var nameList = [];
@@ -87,7 +87,7 @@ function myFunction() {
                 if(idList[counter] != undefined){
                   showIt();
                 }
-            }, 600); 
+            }, 100); 
           }
           showIt();
 
@@ -95,7 +95,7 @@ function myFunction() {
           for(var i=nameList.length-10; i<nameList.length; i++){
 
 
-              $('#metaInfo').append('<div style="margin-left: 10px; margin-top:5px;" class="chip">'+
+              $('#metaInfo').append('<div style="margin-left: 15px; margin-top:15px;" class="chip">'+
                 '<img src="' + photoList[i] + '" alt="Contact Person">'+
                 nameList[i] + '</div>');
 

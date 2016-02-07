@@ -17,13 +17,10 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo" style="color: white;">HashTag-Unification</a>
       <ul class="right hide-on-med-and-down">
-        <li><a id="napsMainListen" href="https://github.com/amritsinghbains" style="color: white;">Amrit Singh Bains</a></li>
+        <!-- <li><a id="napsMainListen" onclick="myFunctionMain()" style="color: white;">Refresh</a></li> -->
       </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="https://github.com/amritsinghbains">Amrit Singh Bains</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      
     </div>
   </nav>
 
@@ -55,25 +52,31 @@
           <button id="submit_button" class="btn waves-effect waves-light" type="submit" name="action" onclick="myFunctionMain()" style="background-color: #2196F3;">Submit
               <i class="material-icons right">send</i>
             </button>
+            <a class="btn-floating btn-large waves-effect waves-light green" onclick="myFunctionMain()">
+              <i class="material-icons">
+                refresh
+              </i>
+            </a>
         </div>
 
         <div class="input-field col s3" >
-          
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light" id="cardImage">
-              <img class="activator" src="http://materializecss.com/images/sample-1.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4" id="cardMain">
-              Card Title
-              <!-- <i class="material-icons right">more_vert</i></span> -->
-              <!-- <p><a href="#">This is a link</a></p> -->
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4" id="cardSub">
-              Card Title
-              <!-- <i class="material-icons right">close</i></span> -->
-              <p>Here is the status.</p>
+          <div style="margin-top:-80px" class="card small">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light" id="cardImage">
+                <img class="activator" src="http://materializecss.com/images/sample-1.jpg">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4" id="cardMain">
+                Card Title
+                <!-- <i class="material-icons right">more_vert</i></span> -->
+                <!-- <p><a href="#">This is a link</a></p> -->
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4" id="cardSub">
+                Card Title
+                <!-- <i class="material-icons right">close</i></span> -->
+                <p>Here is the status.</p>
+              </div>
             </div>
           </div>
 
@@ -82,7 +85,7 @@
 
         <div>
 
-        <div id="metaInfo" style="margin: -120px 0 0 0;" class="input-field col s9" >
+        <div id="metaInfo" style="margin: -150px 0 0 0;" class="input-field col s9" >
             Results
           </div>
         </div>
