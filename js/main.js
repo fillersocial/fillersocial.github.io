@@ -35,6 +35,86 @@ function myFunctionMain () {
     // }, 3000); 
 }
 
+function myFunctionProfile () {
+    var x = document.getElementById("first_name2");
+    var y = document.getElementById("submit_button");
+    // x.disabled = true
+    // y.disabled = true
+    $('#logo-container').text('@' + x.value);
+    if(toggleValue == true){
+      toggleValue = false;
+      $('#napsMainListen').text('Refresh...');
+    }else{
+      toggleValue = true;
+      $('#napsMainListen').text('Refresh');
+    }
+    myFunctionProfile();
+    // setTimeout(function(){ 
+    //   console.log('called')
+    //   myFunctionMain();
+    // }, 3000); 
+}
+
+function myFunctionProfile() {
+    var x = document.getElementById("first_name2");
+    var y = document.getElementById("submit_button");
+
+    // y.disabled = true;
+    if(x.value.length < 1){
+      y.disabled = false;
+      return 1;
+    }
+
+    // toggle_visibility('loadingMask', 'show');
+    $.ajax({url: "https://hashtagunification.herokuapp.com/profile?q=" + x.value.trim(), success: function(result){
+        console.log(result);
+        // toggle_visibility('loadingMask', 'hide');
+        var idList = [];
+        
+          for(var i=0; i<result.length; i++){
+            if(i == result.length - 1){
+              document.getElementById("cardMain").innerHTML = result[i].name;
+              document.getElementById("cardSub").innerHTML = result[i].name +
+                '<p>' + result[i].text + '</p>';
+              document.getElementById("cardImage").innerHTML = '<img class="activator" '+
+              'src="' + result[i].profile_image_url + '">';
+              
+            }
+            if($("#" + result[i].id).length == 0){
+              idList.push(result[i].id);
+              nameList.push(result[i].name);
+              photoList.push(result[i].profile_image_url);
+              $("#listOfPeople").prepend('<div style="display: none;" id="' + result[i].id + '"><li class="collection-item avatar">'+
+                '<i class="circle"> <img src="' + result[i].profile_image_url + '" height="50px" width="50px" /></i>'+
+                  // '<i>profile_image_url</i>'+
+                  ' <span class="title"><b>' + 
+                  result[i].name + '</b> <div style="text-align: right;margin-top: -20px;font-size: 12px;">'+
+                  parseTwitterDate(result[i].created_at) + 
+                  '</div></span><p style="text-align:left;">' + result[i].text + ' </p></li></div>');
+                  // $("#" + result[i].id).fadeIn('slow');
+
+            }
+          }
+
+          var counter = 0;
+          function showIt(){
+            setTimeout(function(){ 
+            console.log(idList[counter]);
+                                
+                $("#" + idList[counter++]).show();
+                if(idList[counter] != undefined){
+                  showIt();
+                }
+            }, 100); 
+          }
+          showIt();
+
+          $('#metaInfo').empty();
+          $('#metaInfo').append('sdfsdf')
+          
+        }});
+}
+
 var nameList = [];
 var photoList = [];
 function myFunction() {
